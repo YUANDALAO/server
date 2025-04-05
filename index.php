@@ -2,7 +2,7 @@
 
 function handler($request, $context) {
     // 微信公众号配置
-    $token = "您设置的Token";
+    $token = "YuanDalao_2025_wxToken";
 
     // 获取请求参数
     $params = $request->getQueryParams();
