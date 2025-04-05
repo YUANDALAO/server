@@ -1,0 +1,27 @@
+edition: 1.0.0
+name: wechat-handler
+access: default
+
+services:
+  wechat-service:
+    component: fc
+    props:
+      region: cn-hangzhou
+      service:
+        name: wechat-service
+        description: 'Wechat Official Account handler'
+      function:
+        name: wechat-handler
+        description: 'Handle wechat message and verification'
+        runtime: php7.2
+        codeUri: ./
+        handler: index.handler
+        memorySize: 128
+      triggers:
+        - name: httpTrigger
+          type: http
+          config:
+            authType: anonymous
+            methods:
+              - GET
+              - POST
